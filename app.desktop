@@ -1,19 +1,19 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=VSCode
-GenericName=VSCode
-Comment=Code Editing. Redefined.
-Exec=code --unity-launch %F
-Icon=code
+Name=Google Antigravity
+GenericName=Google Antigravity
+Comment=The AI-native IDE from Google.
+Exec=antigravity --unity-launch %F
+Icon=antigravity
 Categories=TextEditor;Development;IDE;
-StartupWMClass=Code
+StartupWMClass=Antigravity
 StartupNotify=true
-Keywords=vscode;Visual Studio Code;Code;
+Keywords=antigravity;google;ide;ai;code;
 MimeType=text/plain;inode/directory;application/x-code-workspace;
 Actions=new-empty-window;
 
 [Desktop Action new-empty-window]
 Name=New Empty Window
-Exec=code --new-window %F
-Icon=code
+Exec=antigravity --new-window %F
+Icon=antigravity

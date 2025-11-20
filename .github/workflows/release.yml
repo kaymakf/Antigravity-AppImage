@@ -1,4 +1,4 @@
-name: Build AppImage
+name: Build Google Antigravity AppImage
 on:
   workflow_dispatch:
   schedule:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   version:
-    name: VSCode AppImage
+    name: Antigravity AppImage
     runs-on: ubuntu-22.04
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -21,7 +21,8 @@ jobs:
         id: build
         uses: valicm/appimage-bash@main
         with:
-          version_url: 'https://code.visualstudio.com/sha/download?build=stable\&os=linux-x64'
+          #This URL contains Version 1.11.3. Check https://antigravity.google/download/linux for updates.
+          version_url: 'https://edgedl.me.gvt1.com/edgedl/release2/j0qc3/antigravity/stable/1.11.3-6583016683339776/linux-x64/Antigravity.tar.gz'
           version_file: 'resources/app/package.json'
           version_bash: 'jq -r  .version'
           version_icon: 'code.png'
