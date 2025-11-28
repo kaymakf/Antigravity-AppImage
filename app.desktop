@@ -1,9 +1,9 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=Google Antigravity
+Name=Antigravity
 GenericName=Google Antigravity
-Comment=The AI-native IDE from Google.
+Comment=Google Antigravity Agentic IDE
 Exec=antigravity --unity-launch %F
 Icon=antigravity
 Categories=TextEditor;Development;IDE;

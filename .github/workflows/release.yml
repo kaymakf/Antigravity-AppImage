@@ -1,8 +1,8 @@
-name: Build Google Antigravity AppImage
+name: Build Antigravity AppImage
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: "5 */12 * * *"
+  schedule:
+    - cron: "15 */12 * * *"
   push:
     branches:
       - "main"
@@ -17,12 +17,16 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install libfuse2
         run: sudo apt-get install -y libfuse2 imagemagick   
+      - name: Read version URL
+        id: get_version
+        run: |
+          URL=$(jq -r .version_url version.json)
+          echo "url=$URL" >> $GITHUB_OUTPUT
       - name: Build
         id: build
         uses: valicm/appimage-bash@main
         with:
-          #This URL contains Version 1.11.9. Check https://antigravity.google/download/linux for updates.
-          version_url: 'https://edgedl.me.gvt1.com/edgedl/release2/j0qc3/antigravity/stable/1.11.9-4787439284912128/linux-x64/Antigravity.tar.gz'
+          version_url: ${{ steps.get_version.outputs.url }}
           version_file: 'resources/app/product.json'
           version_bash: 'jq -r  .ideVersion'
           version_icon: 'code.png'
